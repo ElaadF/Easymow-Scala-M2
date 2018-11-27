@@ -8,6 +8,10 @@ scala:
    - 2.12.5
    - 2.12.6
    - 2.12.7
+   
+env:
+  global:
+    - CODECOV_TOKEN="2012b75d-83d9-4761-b782-6218f2aab7cd"
 
 script:
    - sbt ++$TRAVIS_SCALA_VERSION test
