@@ -4,11 +4,11 @@ sealed trait ErrorMsg[A] {
 }
 
 case object AddOccupiedLocation extends ErrorMsg[(Int, Int)] {
-  def errorMessage(coordinate: (Int, Int)): String = s"Location $coordinate is already occupied by an other vehicle."
+  def errorMessage(coordinate: (Int, Int)): String = s"Location $coordinate is already occupied by an other vehicle: vehicles ignored"
 }
 
 case object AddOutOfBound extends ErrorMsg[(Int, Int)] {
-  def errorMessage(coordinate: (Int, Int)): String = s"Location $coordinate is out of bound."
+  def errorMessage(coordinate: (Int, Int)): String = s"Location $coordinate is out of bound: vehicles ignored"
 }
 
 case object ReadFileFailed extends ErrorMsg[String] {
@@ -38,4 +38,17 @@ case object UnknownCardinal extends ErrorMsg[String] {
 case object UnknownInstruction extends ErrorMsg[String] {
   def errorMessage(instr: String): String = s"Instruction unknown : $instr"
 }
+
+case object HitAWall extends ErrorMsg[(Int, Int)] {
+  def errorMessage(coordinate: (Int, Int)): String = s"Vehicle hit a wall at $coordinate: instruction ignored"
+}
+
+case object HitAVehicle extends ErrorMsg[(Int, Int)] {
+  def errorMessage(coordinate: (Int, Int)): String = s"Vehicle hit another vehicle at $coordinate: instruction ignored"
+}
+
+case object VehiclesSameLocation extends ErrorMsg[(Int, Int)] {
+  def errorMessage(coordinate: (Int, Int)): String = s"Conflict between two vehicles location at $coordinate: vehicles ignored"
+}
+
 

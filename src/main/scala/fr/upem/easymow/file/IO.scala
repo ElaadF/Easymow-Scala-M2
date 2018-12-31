@@ -2,7 +2,7 @@ package fr.upem.easymow.file
 
 import scala.io.Source
 import fr.upem.easymow.playground.CardinalUtils._
-import fr.upem.easymow.error.{ErrorMsg, _}
+import fr.upem.easymow.error._
 import fr.upem.easymow.playground._
 import fr.upem.easymow.file.RegexUtils._
 import fr.upem.easymow.vehicle._
@@ -19,7 +19,7 @@ object IO {
     val errorsLines: Option[String] = errorSizeField(content)
 
 
-    val RegexAnalysis.patternFieldSize(length, width) = content(0)
+    val RegexAnalysis.patternFieldSize(length, width) = content.head
     val vehicles = content.drop(1)
     val positions: List[String] = getEvenIndexElement(vehicles)
     val instructions: List[String] = getOddIndexElement(vehicles)

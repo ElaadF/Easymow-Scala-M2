@@ -2,10 +2,6 @@ package fr.upem.easymow.playground
 
 import fr.upem.easymow.vehicle._
 import fr.upem.easymow.error._
-//import org.apache.logging.log4j
-//import org.apache.logging.log4j.scala.Logger
-//import org.apache.logging.log4j.scala.Logging
-//import org.apache.logging.log4j.{Level, LogManager}
 
 sealed trait Cardinal
 
@@ -30,13 +26,6 @@ object CardinalUtils {
 }
 
 case class Field(length : Int, width : Int, vehicles : List[Lawnmower] = List[Lawnmower]()){
-//  def apply(x : Int, y : Int, vehicles: List[Lawnmower]) =
-//    vehicles match {
-//      case vehicles if !vehicles.forall(
-//        lm => (lm.pos.x != x || lm.pos.y != y) &&  (x >= 0 && y >=0 && x <=length && y <= width) )
-//            => Left(AddOutOfBound)
-//      case _ => Right(Field(x, y, vehicles))
-//    }
 
   def add(lm: Lawnmower): Either[ErrorMsg[(Int, Int)], Field] =
     lm match {
@@ -50,6 +39,8 @@ case class Field(length : Int, width : Int, vehicles : List[Lawnmower] = List[La
 //      AddOccupiedLocation
 //    )
 
+  def isValidPlayground: List[Lawnmower] = vehicles.filter(lm => !Field.isFreeZone(Field(length, width, vehicles diff List(lm)), lm) || !Field.isInField(Field(length, width, vehicles diff List(lm)), lm))
+
   def isFreeZone(x: Int, y: Int): Boolean =
     vehicles.forall(lm => lm.pos.x != x || lm.pos.y != y)
 
@@ -57,24 +48,10 @@ case class Field(length : Int, width : Int, vehicles : List[Lawnmower] = List[La
     x >= 0 && y >=0 && x <=length && y <= width
 }
 
+object Field {
+  def isFreeZone(field: Field, lm: Lawnmower): Boolean =
+    field.vehicles.forall(v => v.pos.x != lm.pos.x || v.pos.y != lm.pos.y)
 
-
-//object crashtest {
-//  import fr.upem.easymow.error._
-//  import org.apache.logging.log4j.scala.Logging
-//  val logger: log4j.Logger = LogManager.getLogger(getClass().getName())
-//  def main (args: Array[String] ): Unit = {
-//    val v = Lawnmower(Position(3, 3, North), "toto")
-//    val v2 = Lawnmower(Position(3, 3, North), "toto")
-//    val l = List(v, v2)
-//    val a = Field(3,3, l)
-//   logger.info("toto")
-//
-//    val b = Field(3,3, List(v)).add(v2)
-////    println(a.isInField(0,-1))
-//    b match {
-//      case Left(s) => logger.warn(s.errorMessage(0,3))
-//      case Right(s) => logger.info(s)
-//    }
-//  }
-//}
+  def isInField(field: Field, lm: Lawnmower): Boolean =
+    lm.pos.x >= 0 && lm.pos.y >=0 && lm.pos.x <=field.length && lm.pos.y <= field.width
+}
