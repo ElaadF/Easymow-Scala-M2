@@ -30,3 +30,12 @@ case object VehiclePositionFormatIncorrect extends ErrorMsg[String] {
 case object InstructionFormatIncorrect extends ErrorMsg[String] {
   def errorMessage(instrFormat: String): String = s"Instruction format is incorrect : $instrFormat"
 }
+
+case object UnknownCardinal extends ErrorMsg[String] {
+  def errorMessage(card: String): String = s"Cardinal unknown : $card"
+}
+
+case object UnknownInstruction extends ErrorMsg[String] {
+  def errorMessage(instr: String): String = s"Instruction unknown : $instr"
+}
+

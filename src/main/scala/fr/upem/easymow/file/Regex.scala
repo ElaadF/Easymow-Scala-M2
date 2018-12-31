@@ -17,7 +17,7 @@ object RegexUtils {
 }
 
 object RegexAnalysis {
-  val patternVehiclePos: Regex = """^(\\d+)[\\t ]+(\\d+)[\\t ]+([newsNEWS]{1})$""".r
-  val patternFieldSize: Regex = """^(\\d+)[\\t ]+(\\d+)[\\t ]+$""".r
+  val patternVehiclePos: Regex = """^(\d+)[\t ]+(\d+)[\t ]+([newsNEWS]{1})[\t ]*$""".r
+  val patternFieldSize: Regex = """(\d+)[\t ]+(\d+)[\t ]*""".r
   val patternInstructions: Regex = """[agdAGD]+""".r
 }
