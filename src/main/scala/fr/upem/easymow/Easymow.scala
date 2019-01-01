@@ -1,8 +1,7 @@
 package fr.upem.easymow
 
-
-import cats.Show           //the type class
-import cats.syntax.show._  //the interface syntax
+import cats.Show
+import cats.syntax.show._
 import fr.upem.easymow.error.{AddOutOfBound, VehiclesSameLocation}
 import fr.upem.easymow.file.IO
 import fr.upem.easymow.playground.{Field, Position}
@@ -12,18 +11,16 @@ import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Level
 import scala.util.{Failure, Success}
 
+/** Main application */
 object Easymow extends App {
   val logger: log4j.Logger = LogManager.getLogger(getClass.getName)
   val RESULT = Level.forName("RESULT", 450)
-
 
   implicit val positionShow: Show[Position] =
     Show.show(p => s"""(${p.x}, ${p.y}, ${p.orientation})""")
 
   implicit val lawnmowerShow: Show[Lawnmower] =
     Show.show(lm => s"Position : ${lm.pos.show} Instructions : ${lm.instruction}")
-
-
 
 
   IO.read(scala.io.StdIn.readLine("Select a file: ")) match {
@@ -33,7 +30,7 @@ object Easymow extends App {
         case Left(e) => e.foreach(err => logger.error(err))
         case Right(field) =>
 
-          val wrongVehicle: List[Lawnmower] = field.isValidPlayground
+          val wrongVehicle: List[Lawnmower] = field.getInvalidVehicles
           if(wrongVehicle.nonEmpty) {
             wrongVehicle.foreach {
               case l if !field.isInField(l.pos.x, l.pos.y) => logger.warn(AddOutOfBound.errorMessage((l.pos.x, l.pos.y)))
@@ -41,7 +38,7 @@ object Easymow extends App {
             }
           }
           val cleanField: Field = field.copy(vehicles = field.vehicles diff wrongVehicle)
-          val fieldComputeAndField = Field.computeField(cleanField)
+          val fieldComputeAndField = cleanField.computeField
           val fieldComputeRes: List[Either[String, Lawnmower]] = fieldComputeAndField._1
           val finalField = fieldComputeAndField._2
 
