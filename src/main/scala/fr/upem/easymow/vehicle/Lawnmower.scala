@@ -66,6 +66,7 @@ case class Lawnmower(pos: Position, instruction : String) {
                     lastRight match {
                       case Some(lm2) =>  lm2 match {
                         case Right(l) => executeInstructionRecAcc (field, v :+ Right(Lawnmower.moveForward(l)), xs)
+                        case Left(_) => executeInstructionRecAcc (field, v, xs)
                       }
                       case None => executeInstructionRecAcc(field,v , xs)
                     }
@@ -76,43 +77,38 @@ case class Lawnmower(pos: Position, instruction : String) {
 
           //right rotation
           case 'D' =>
-            val lastRight: Option[Either[String, Lawnmower]] = v.filter(x => x match {
-              case Left(_) => false
-              case Right(_) => true
-            }).lastOption
 
+            val lastRight = Lawnmower.getLastRight(v)
             lastRight match {
               case Some(lm) =>  lm match {
                 case Right(l) => executeInstructionRecAcc(field, v :+ Right(l.rightRotation), xs)
+                case Left(_) => executeInstructionRecAcc(field, v, xs)
               }
               case None => executeInstructionRecAcc(field, v, xs)
             }
 
           //left rotation
           case 'G' =>
-            val lastRight: Option[Either[String, Lawnmower]] = v.filter(x => x match {
-              case Left(_) => false
-              case Right(_) => true
-            }).lastOption
 
+            val lastRight = Lawnmower.getLastRight(v)
             lastRight match {
               case Some(lm) =>  lm match {
                 case Right(l) => executeInstructionRecAcc(field, v :+ Right(l.rightRotation), xs)
+                case Left(_) => executeInstructionRecAcc(field, v, xs)
               }
               case None => executeInstructionRecAcc(field, v, xs)
             }
         }
         case Nil =>
-          val lastRight: Option[Either[String, Lawnmower]] = v.filter(x => x match {
-            case Left(_) => false
-            case Right(_) => true
-          }).lastOption
 
+          val lastRight = Lawnmower.getLastRight(v)
           lastRight match {
             case Some(lm) =>  lm match {
               case Right(l) =>  field.add(l) match {
                 case Right(f) => (v, f)
+                case Left(_) => (v, field)
               }
+              case Left(_) => (v, field)
             }
             case None => (v, field)
           }
@@ -124,10 +120,23 @@ case class Lawnmower(pos: Position, instruction : String) {
   }
 }
 
+
 /** Companion object of Lawnmower
   * static methods of move forward */
 object Lawnmower {
 
+  /** Get the last Right value if he exists
+    *
+    *  @param v list of trace of the execution
+    *  @return the last right value if exists
+    *          None otherwise
+    */
+  def getLastRight(v: List[Either[String, Lawnmower]]) : Option[Either[String, Lawnmower]] = {
+    v.filter(x => x match {
+      case Left(_) => false
+      case Right(_) => true
+    }).lastOption
+  }
   /** Move forward a vehicle
     *
     *  @param lm the vehicle who wants to move
