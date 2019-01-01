@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
-    <Appenders>
-        <Console name="console" target="SYSTEM_OUT">
+<configuration status="WARN">
+    <CustomLevels>
+        <CustomLevel name="RESULT" intLevel="450" />
+    </CustomLevels>
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"/>
+            <Filters>
+                <!-- Deny warn, error and fatal messages -->
+                <ThresholdFilter level="info"  onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="warn"  onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="fatal" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <!-- Accept RESULT, info, warn, error, fatal and deny debug/trace -->
+                <ThresholdFilter level="RESULT"  onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </Console>
+
+        <Console name="ConsoleErr" target="SYSTEM_ERR">
             <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"/>
         </Console>
-    </Appenders>
-    <Loggers>
-        <Root level="info" additivity="false">
-            <AppenderRef ref="console"/>
-        </Root>
-    </Loggers>
-</Configuration>
+        <File name="record" fileName="logs/record.log">
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"/>
+        </File>
+    </appenders>
+    <loggers>
+        <root level="debug">
+            <appender-ref ref="Console" level="RESULT"/>
+            <appender-ref ref="record" level="debug"/>
+            <appender-ref ref="ConsoleErr" level="error"/>
+        </root>
+    </loggers>
+</configuration>

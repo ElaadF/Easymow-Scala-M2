@@ -1,5 +1,7 @@
 package fr.upem.easymow.vehicle
 
+import cats.Show
+import cats.syntax.show._
 import fr.upem.easymow.error._
 import fr.upem.easymow.playground._
 import fr.upem.easymow.playground.Field
@@ -100,6 +102,7 @@ case class Lawnmower(pos: Position, instruction : String) {
 }
 
 object Lawnmower {
+
   def moveForward(lm: Lawnmower): Lawnmower = lm.pos.orientation match {
     case North => Lawnmower(Position(lm.pos.x, lm.pos.y + 1, lm.pos.orientation), lm.instruction)
     case South => Lawnmower(Position(lm.pos.x, lm.pos.y - 1, lm.pos.orientation), lm.instruction)

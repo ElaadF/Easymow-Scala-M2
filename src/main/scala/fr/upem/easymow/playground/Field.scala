@@ -49,9 +49,23 @@ case class Field(length : Int, width : Int, vehicles : List[Lawnmower] = List[La
 }
 
 object Field {
+
   def isFreeZone(field: Field, lm: Lawnmower): Boolean =
     field.vehicles.forall(v => v.pos.x != lm.pos.x || v.pos.y != lm.pos.y)
 
   def isInField(field: Field, lm: Lawnmower): Boolean =
     lm.pos.x >= 0 && lm.pos.y >=0 && lm.pos.x <=field.length && lm.pos.y <= field.width
+
+  def computeField(field: Field): (List[Either[String, Lawnmower]], Field) = {
+    def computeFieldAcc(f: Field, l: List[Lawnmower], res: List[Either[String, Lawnmower]]): (List[Either[String, Lawnmower]], Field) = {
+      l match {
+        case x :: xs =>
+          val fieldCopy = f.copy(vehicles = f.vehicles diff List(x))
+          val resAndField = x.executeInstructionRec(fieldCopy)
+          computeFieldAcc(resAndField._2, xs, res ::: resAndField._1)
+        case Nil => (res, f)
+      }
+    }
+    computeFieldAcc(field, field.vehicles, List())
+  }
 }
