@@ -7,7 +7,7 @@ env:
     - CODECOV_TOKEN="2012b75d-83d9-4761-b782-6218f2aab7cd"
 
 script:
-   - sbt ++$TRAVIS_SCALA_VERSION test
+   - sbt clean coverage test coverageReport
    
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -t token
