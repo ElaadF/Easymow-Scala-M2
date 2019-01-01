@@ -20,7 +20,7 @@ class ErrorMsgTest extends FlatSpec with Matchers with GeneratorDrivenPropertyCh
 
   "Read file error" should "return" in {
     forAll("path") { path: String =>
-      ReadFileFailed.errorMessage(path) should be(s"ead $path have failed")
+      ReadFileFailed.errorMessage(path) should be(s"Read $path have failed")
     }
   }
 }
