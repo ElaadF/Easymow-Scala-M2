@@ -23,4 +23,58 @@ class ErrorMsgTest extends FlatSpec with Matchers with GeneratorDrivenPropertyCh
       ReadFileFailed.errorMessage(path) should be(s"Read $path have failed")
     }
   }
+
+  "Number of line in file error" should "return" in {
+    forAll("nbline") { nbline: String =>
+      FileNumberLineWrong.errorMessage(nbline) should be(s"Some instructions may be missing : $nbline instruction found")
+    }
+  }
+
+  "Field size format error" should "return" in {
+    forAll("fieldSizeFormat") { fieldSizeFormat: String =>
+      FieldSizeFormatIncorrect.errorMessage(fieldSizeFormat) should be(s"Field size definition $fieldSizeFormat is incorrect")
+    }
+  }
+
+  "Vehicule position format error" should "return" in {
+    forAll("vehicleFormat") { vehicleFormat: String =>
+      VehiclePositionFormatIncorrect.errorMessage(vehicleFormat) should be(s"Initialization format is incorrect : $vehicleFormat")
+    }
+  }
+
+  "Instruction format error" should "return" in {
+    forAll("vehicleFormat") { instrFormat: String =>
+      InstructionFormatIncorrect.errorMessage(instrFormat) should be(s"Instruction format is incorrect : $instrFormat")
+    }
+  }
+
+  "Unknown cardinal error" should "return" in {
+    forAll("vehicleFormat") { card: String =>
+      UnknownCardinal.errorMessage(card) should be(s"Cardinal unknown : $card")
+    }
+  }
+
+  "Unknown instruction error" should "return" in {
+    forAll("vehicleFormat") { instr: String =>
+      UnknownInstruction.errorMessage(instr) should be(s"Instruction unknown : $instr")
+    }
+  }
+
+  "Vehicle hit a wall error" should "return" in {
+    forAll("x", "y") { (x: Int, y: Int) =>
+      HitAWall.errorMessage((x,y)) should be(s"Vehicle hit a wall at ${(x,y)}: instruction ignored")
+    }
+  }
+
+  "Vehicle hit a vehicle error" should "return" in {
+    forAll("x", "y") { (x: Int, y: Int) =>
+      HitAVehicle.errorMessage((x,y)) should be(s"Vehicle hit another vehicle at ${(x,y)}: instruction ignored")
+    }
+  }
+
+  "Vehicles have same location error" should "return" in {
+    forAll("x", "y") { (x: Int, y: Int) =>
+      VehiclesSameLocation.errorMessage((x,y)) should be(s"Conflict between two vehicles location at ${(x,y)}: vehicles ignored")
+    }
+  }
 }
