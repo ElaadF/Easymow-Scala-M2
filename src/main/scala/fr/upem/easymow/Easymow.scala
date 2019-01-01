@@ -8,8 +8,20 @@ import org.apache.logging.log4j
 import org.apache.logging.log4j.LogManager
 
 import scala.util.{Failure, Success}
-
-
+object uti {
+  def computeField(field: Field): (List[Either[String, Lawnmower]], Field) = {
+    def computeFieldAcc(f: Field, l: List[Lawnmower], res: List[Either[String, Lawnmower]]): (List[Either[String, Lawnmower]], Field) = {
+      l match {
+        case x :: xs =>
+          val fieldCopy = f.copy(vehicles = f.vehicles diff List(x))
+          val resAndField = x.executeInstructionRec(fieldCopy)
+          computeFieldAcc(resAndField._2, xs, res ::: resAndField._1)
+        case Nil => (res, f)
+      }
+    }
+    computeFieldAcc(field, field.vehicles, List())
+  }
+}
 object Easymow extends App {
   val logger: log4j.Logger = LogManager.getLogger(getClass.getName)
 
@@ -28,12 +40,10 @@ object Easymow extends App {
             }
           }
           val cleanField: Field = field.copy(vehicles = field.vehicles diff wrongVehicle)
-          val fieldCompute: List[List[Either[String,Lawnmower]]] = cleanField.vehicles.map(v => {
-            val fieldCopy = cleanField.copy(vehicles = cleanField.vehicles diff List(v))
-            v.executeInstructionRec(fieldCopy)
-          })
-
-          fieldCompute.flatten.foreach {
+          val fieldComputeAndField = uti.computeField(cleanField)
+          val fieldComputeRes: List[Either[String, Lawnmower]] = fieldComputeAndField._1
+          //println(fieldComputeAndField._2)
+          fieldComputeRes.foreach {
             case Left(impossibleInstr) => logger.warn(impossibleInstr)
             case Right(vehicleFinalState) => logger.info(vehicleFinalState)
           }
