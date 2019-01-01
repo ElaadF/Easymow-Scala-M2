@@ -25,21 +25,57 @@ case class Lawnmower(pos: Position, instruction : String) {
     def executeInstructionRecAcc(field: Field, v: List[Either[String, Lawnmower]] , instr: List[Char]): List[Either[String, Lawnmower]] = {
       instr match {
         case x :: xs => x match {
-          case 'A'  => canMoveForward(field) match {
-            case None =>  v.last match {
-              case Left(_) => executeInstructionRecAcc(field,v , xs)
-               case Right(lm) => executeInstructionRecAcc (field, v :+ Right(Lawnmower.moveForward(lm)), xs)
+          // move forward
+          case 'A'  =>
+            //if the last element of v is a left value then the vehicle can't move forward
+            v.last match {
+              case Right(lm) =>
+                Lawnmower.canMoveForward(field, lm) match {
+                  case None =>
+
+                    val lastRight: Option[Either[String, Lawnmower]] = v.filter(x => x match {
+                      case Left(_) => false
+                      case Right(_) => true
+                    }).lastOption
+
+                    lastRight match {
+                      case Some(lm2) =>  lm2 match {
+                        case Right(l) => executeInstructionRecAcc (field, v :+ Right(Lawnmower.moveForward(l)), xs)
+                      }
+                      case None => executeInstructionRecAcc(field,v , xs)
+                    }
+                  case Some(error) => executeInstructionRecAcc(field, v :+ Left(error), xs)
+                }
+              case Left(error) => executeInstructionRecAcc(field, v :+ Left(error), xs)
+            }
+
+          //right rotation
+          case 'D' =>
+            val lastRight: Option[Either[String, Lawnmower]] = v.filter(x => x match {
+              case Left(_) => false
+              case Right(_) => true
+            }).lastOption
+
+            lastRight match {
+              case Some(lm) =>  lm match {
+                case Right(l) => executeInstructionRecAcc(field, v :+ Right(Lawnmower(Position (l.pos.x, l.pos.y, l.pos.orientation.rightRotation), instruction)), xs)
               }
-            case Some(error) => executeInstructionRecAcc(field, v :+ Left(error), xs)
-          }
-          case 'D' => v.last match {
-            case Left(_) => executeInstructionRecAcc(field,v , xs)
-            case Right(lm) => executeInstructionRecAcc(field, v :+ Right(Lawnmower(Position (lm.pos.x, lm.pos.y, lm.pos.orientation.rightRotation), instruction)), xs)
-          }
-          case 'G' => v.last match {
-            case Left(_) => executeInstructionRecAcc(field, v, xs)
-            case Right(lm) => executeInstructionRecAcc(field, v :+ Right(Lawnmower(Position (lm.pos.x, lm.pos.y, lm.pos.orientation.leftRotation), instruction)), xs)
-          }
+              case None => executeInstructionRecAcc(field, v, xs)
+            }
+
+          //left rotation
+          case 'G' =>
+            val lastRight: Option[Either[String, Lawnmower]] = v.filter(x => x match {
+              case Left(_) => false
+              case Right(_) => true
+            }).lastOption
+
+            lastRight match {
+              case Some(lm) =>  lm match {
+                case Right(l) => executeInstructionRecAcc(field, v :+ Right(Lawnmower(Position (l.pos.x, l.pos.y, l.pos.orientation.leftRotation), instruction)), xs)
+              }
+              case None => executeInstructionRecAcc(field, v, xs)
+            }
         }
         case Nil => v
       }

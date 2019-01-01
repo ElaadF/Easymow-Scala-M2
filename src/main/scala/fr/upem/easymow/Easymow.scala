@@ -1,14 +1,13 @@
 package fr.upem.easymow
 
-import fr.upem.easymow.error.{AddOccupiedLocation, AddOutOfBound, VehiclesSameLocation}
-
-import scala.util.Success
-import scala.util.Failure
+import fr.upem.easymow.error.{AddOutOfBound, VehiclesSameLocation}
 import fr.upem.easymow.file.IO
 import fr.upem.easymow.playground.Field
 import fr.upem.easymow.vehicle.Lawnmower
 import org.apache.logging.log4j
 import org.apache.logging.log4j.LogManager
+
+import scala.util.{Failure, Success}
 
 
 object Easymow extends App {
@@ -22,7 +21,6 @@ object Easymow extends App {
         case Right(field) =>
 
           val wrongVehicle: List[Lawnmower] = field.isValidPlayground
-          println(wrongVehicle)
           if(wrongVehicle.nonEmpty) {
             wrongVehicle.foreach {
               case l if !field.isInField(l.pos.x, l.pos.y) => logger.warn(AddOutOfBound.errorMessage((l.pos.x, l.pos.y)))
@@ -30,8 +28,6 @@ object Easymow extends App {
             }
           }
           val cleanField: Field = field.copy(vehicles = field.vehicles diff wrongVehicle)
-          println(cleanField)
-          println(field)
           val fieldCompute: List[List[Either[String,Lawnmower]]] = cleanField.vehicles.map(v => {
             val fieldCopy = cleanField.copy(vehicles = cleanField.vehicles diff List(v))
             v.executeInstructionRec(fieldCopy)
@@ -42,7 +38,7 @@ object Easymow extends App {
             case Right(vehicleFinalState) => logger.info(vehicleFinalState)
           }
       }
-    case Failure(ex) => println(s"Erreur lecture fichier : $ex")
+    case Failure(ex) => logger.error(s"Erreur lecture fichier : $ex")
   }
 }
 
