@@ -25,7 +25,8 @@ object Easymow extends App {
 
 
 
-  IO.read("src/main/resources/input") match {
+
+  IO.read(scala.io.StdIn.readLine("Select a file: ")) match {
     case Success(content) =>
       val resultFile = IO.analyzeFormat(content)
       resultFile match {
