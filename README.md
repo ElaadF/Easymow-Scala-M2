@@ -55,6 +55,8 @@ Le projet afficher 4 niveaux de logs actuellement:
 
 >**Note:** RESULT est un custom log afin d'afficher les résultats liés au déplacement de tondeuse
 
+le fichier de configuration [log4j2.xml](src/main/resources/log4j2.xml) permet de décrire ce qui est affiché ou non sur la console, ce qui est
+redirigé vers le fichier ```logs/record.log``` ansi que le format des logs.
 ### RESULT :
 ```
 [RESULT] 2019-01-02 21:29:31.840 [main] Easymow$ - (0, 5, West) => (1, 5, North)
