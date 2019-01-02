@@ -4,6 +4,8 @@ import fr.upem.easymow.vehicle._
 
 /** Rotation on [[fr.upem.easymow.playground.Field Cardinal]]
   * and [[fr.upem.easymow.vehicle.Lawnmower Lawnmower]] */
+@scala.annotation.implicitNotFound("No way to Rotate ${A}." +
+  "An implicit Rotation[${A}] must be in scope")
 trait Rotation[A] {
   def leftRotation(a: A): A
   def rightRotation(a: A): A

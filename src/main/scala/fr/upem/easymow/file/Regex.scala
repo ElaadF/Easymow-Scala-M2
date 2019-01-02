@@ -45,7 +45,7 @@ object RegexUtils {
 
 /** The regex rules for the file's format */
 object RegexAnalysis {
-  val patternVehiclePos: Regex = """^(\d+)[\t ]+(\d+)[\t ]+([newsNEWS]{1})[\t ]*$""".r
-  val patternFieldSize: Regex = """(\d+)[\t ]+(\d+)[\t ]*""".r
+  val patternVehiclePos: Regex = """^[\t ]*(\d+)[\t ]+(\d+)[\t ]+([newsNEWS]{1})[\t ]*$""".r
+  val patternFieldSize: Regex = """[\t ]*(\d+)[\t ]+(\d+)[\t ]*""".r
   val patternInstructions: Regex = """[agdAGD]+""".r
 }

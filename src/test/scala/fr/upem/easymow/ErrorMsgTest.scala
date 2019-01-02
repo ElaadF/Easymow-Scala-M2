@@ -77,4 +77,10 @@ class ErrorMsgTest extends FlatSpec with Matchers with GeneratorDrivenPropertyCh
       VehiclesSameLocation.errorMessage((x,y)) should be(s"Conflict between two vehicles location at ${(x,y)}: vehicles ignored")
     }
   }
+
+  "a list of error" should "return" in {
+    forAll("x", "y") { (x: Int, y: Int) =>
+      VehiclesSameLocation.errorMessage((x,y)) should be(s"Conflict between two vehicles location at ${(x,y)}: vehicles ignored")
+    }
+  }
 }
