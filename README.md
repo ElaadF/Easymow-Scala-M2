@@ -32,7 +32,7 @@ $ sbt run
 [RESULT] 2019-01-02 21:29:31.840 [main] Easymow$ - (4, 1, East) => (5, 1, East)
 ```
 
-## Choix
+## Choix du projet
 1. Dans le programme une tondeuse sont considérées valides lorsque : 
    * est bien à l'intérieur du terrain
    * si il ne possède pas la même position avec une autre tondeuse
@@ -42,7 +42,7 @@ $ sbt run
 ## Logs
 Le programme utilise l'API [log4j](https://logging.apache.org/log4j/2.x/index.html) afin de gérer le système de logger
 A chaque execution du programme, un fichier de log retrace alors en détail chaque execution avec les étapes   
-Ce fichier ce situe dans ```logs/record.log```.
+Ce fichier ce situe dans ```logs/record.log``` il retrace chaque execution du programme et contient tous les niveaux de logs.
 Le projet afficher 4 niveaux de logs actuellement:
 
 | Code   | Int level |
