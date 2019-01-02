@@ -8,7 +8,7 @@ import fr.upem.easymow.vehicle.Lawnmower
 import org.scalatest.prop.GeneratorDrivenPropertyChecks
 import org.scalatest.{FlatSpec, Matchers}
 
-class FieldTest extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks{
+class FieldTest extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks {
 
   "a string representing a cardinal, character or word" should "be converted in Cardinal type" in {
     assert("n".toCardinal == North)
@@ -149,7 +149,7 @@ class FieldTest extends FlatSpec with Matchers with GeneratorDrivenPropertyCheck
     val lm3: Lawnmower = Lawnmower(Position(2,1, West),"A")
     val lm4: Lawnmower = Lawnmower(Position(2,1, West),"GGGGG")
     val field: Field = Field(5,5,List(lm1, lm2, lm3))
-    assert(Field.isFreeZone(field, lm4))
+    assert(!Field.isFreeZone(field, lm4))
   }
 
   "Computing field" should "return the final field and list of process and errors" in {
@@ -178,21 +178,4 @@ class FieldTest extends FlatSpec with Matchers with GeneratorDrivenPropertyCheck
     assert(fieldComputeAndField._1 == processExcepted)
     assert(fieldExcepted == fieldComputeAndField._2)
   }
-
-
-//  def computeField: (List[Either[String, Lawnmower]], Field) = {
-//    def computeFieldAcc(f: Field, l: List[Lawnmower], res: List[Either[String, Lawnmower]]): (List[Either[String, Lawnmower]], Field) = {
-//      l match {
-//        case x :: xs =>
-//          val fieldCopy = f.copy(vehicles = f.vehicles diff List(x))
-//          val resAndField = x.executeInstructionRec(fieldCopy)
-//          computeFieldAcc(resAndField._2, xs, res ::: resAndField._1)
-//        case Nil => (res, f)
-//      }
-//    }
-//    computeFieldAcc(field, field.vehicles, List())
-//  }
-//}
-//getInvalidVehicles: List[Lawnmower]
-  //add(lm: Lawnmower): Either[ErrorMsg[(Int, Int)], Field]
 }
