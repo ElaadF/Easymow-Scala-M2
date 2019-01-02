@@ -54,7 +54,7 @@ class IOtest extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks {
     val res = analyseRes match {
       case Left(content) =>
         assert(content.length == 7)
-        assert(content(0) == "Some instructions may be missing : 10 instruction found")
+        assert(content.head == "Some instructions may be missing : 10 instruction found")
         assert(content(1) == "Field size definition 4 is incorrect")
         assert(content(2) == "Initialization format is incorrect : 3")
         assert(content(3) == "Initialization format is incorrect : invalid")
@@ -75,10 +75,10 @@ class IOtest extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks {
       case Right(field) =>
         assert(field.vehicles.length == 2)
         // First lawnmower
-        assert(field.vehicles(0).pos.x == 0)
-        assert(field.vehicles(0).pos.y == 2)
-        assert(field.vehicles(0).pos.orientation == West)
-        assert(field.vehicles(0).instruction == "ADDGAAD")
+        assert(field.vehicles.head.pos.x == 0)
+        assert(field.vehicles.head.pos.y == 2)
+        assert(field.vehicles.head.pos.orientation == West)
+        assert(field.vehicles.head.instruction == "ADDGAAD")
         // Second lawnmower
         assert(field.vehicles(1).pos.x == 0)
         assert(field.vehicles(1).pos.y == 0)
@@ -201,14 +201,14 @@ class IOtest extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks {
   "A list of error" should "be returned" in {
     assert(isNonEmptyErrorsList(List(None, None)) match {
       case Some(c) =>
-        assert(c(0) == None)
-        assert(c(1) == None)
+        assert(c.head.isEmpty)
+        assert(c(1).isEmpty)
         true
       case None => false
     })
     assert(isNonEmptyErrorsList(List(Some("ERROR1"))) match {
       case Some(c) =>
-        assert(c(0) == Some("ERROR1"))
+        assert(c.head.contains("ERROR1"))
         true
       case None => false
     })
