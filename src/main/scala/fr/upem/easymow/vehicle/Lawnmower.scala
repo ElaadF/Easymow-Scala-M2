@@ -39,11 +39,18 @@ case class Lawnmower(pos: Position, instruction : String) {
     }
   }
 
-  /** Execute instructions of a Lawnmower
+  /** Execute instructions of a Lawnmower according to a
+    * [[fr.upem.easymow.playground.Field Field]]
+    *
+    * **The field should not contains the Lawnmower
+    * who wants to move inside this field**
+    * otherwise conflicts may appear
     *
     *  @param field the field where the vehicle want to move
+    *               he should not contains the lawnmower
     *  @return a tuple of error's message, lawnmower and the final
-    *          field after all process
+    *          field after all process containing the lawnmower
+    *          at his new position
     *          (List[ErrorMsg and Lawnmower], Field)
     */
   def executeInstructionRec(field: Field): (List[Either[String, Lawnmower]], Field) = {

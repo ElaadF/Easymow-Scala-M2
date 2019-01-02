@@ -29,5 +29,4 @@ class PositionTest  extends FlatSpec with Matchers with GeneratorDrivenPropertyC
       assert(p4.orientation == North)
     }
   }
-
 }
