@@ -93,7 +93,7 @@ case class Lawnmower(pos: Position, instruction : String) {
             val lastRight = Lawnmower.getLastRight(v)
             lastRight match {
               case Some(lm) =>  lm match {
-                case Right(l) => executeInstructionRecAcc(field, v :+ Right(l.rightRotation), xs)
+                case Right(l) => executeInstructionRecAcc(field, v :+ Right(l.leftRotation), xs)
                 case Left(_) => executeInstructionRecAcc(field, v, xs)
               }
               case None => executeInstructionRecAcc(field, v, xs)

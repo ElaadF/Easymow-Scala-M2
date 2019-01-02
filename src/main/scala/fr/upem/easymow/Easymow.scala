@@ -38,9 +38,9 @@ object Easymow extends App {
             }
           }
           val cleanField: Field = field.copy(vehicles = field.vehicles diff wrongVehicle)
-          val fieldComputeAndField = cleanField.computeField
+          val fieldComputeAndField: (List[Either[String, Lawnmower]], Field) = cleanField.computeField
           val fieldComputeRes: List[Either[String, Lawnmower]] = fieldComputeAndField._1
-          val finalField = fieldComputeAndField._2
+          val finalField: Field = fieldComputeAndField._2
 
           fieldComputeRes.foreach {
             case Left(impossibleInstr) => logger.warn(impossibleInstr)

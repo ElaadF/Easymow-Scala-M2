@@ -147,7 +147,4 @@ object Field {
         computeFieldAcc(field, field.vehicles, List())
       }
     }
-
-
-
 }

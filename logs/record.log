@@ -4,58 +4,43 @@
 *
 */
 
-[ERROR] 2019-01-02 01:18:46.424 [main] Easymow$ - Read File failed : java.io.FileNotFoundException: re (No such file or directory)
-[WARN ] 2019-01-02 12:35:05.712 [main] Easymow$ - Location (87,2) is out of bound: vehicles ignored
-[WARN ] 2019-01-02 12:35:05.783 [main] Easymow$ - Location (990,9) is out of bound: vehicles ignored
-[WARN ] 2019-01-02 12:35:05.785 [main] Easymow$ - Conflict between two vehicles location at (2,1): vehicles ignored
-[WARN ] 2019-01-02 12:35:05.786 [main] Easymow$ - Conflict between two vehicles location at (3,1): vehicles ignored
-[WARN ] 2019-01-02 12:35:05.786 [main] Easymow$ - Conflict between two vehicles location at (3,1): vehicles ignored
-[WARN ] 2019-01-02 12:35:05.786 [main] Easymow$ - Conflict between two vehicles location at (2,1): vehicles ignored
-[INFO ] 2019-01-02 12:35:05.866 [main] Easymow$ - Position : (0, 5, West) Instructions : DAADAGA
-[INFO ] 2019-01-02 12:35:05.866 [main] Easymow$ - Position : (0, 5, North) Instructions : DAADAGA
-[WARN ] 2019-01-02 12:35:05.866 [main] Easymow$ - Vehicle hit a wall at (0,5): instruction ignored
-[WARN ] 2019-01-02 12:35:05.867 [main] Easymow$ - Vehicle hit a wall at (0,5): instruction ignored
-[INFO ] 2019-01-02 12:35:05.867 [main] Easymow$ - Position : (0, 5, East) Instructions : DAADAGA
-[INFO ] 2019-01-02 12:35:05.867 [main] Easymow$ - Position : (1, 5, East) Instructions : DAADAGA
-[INFO ] 2019-01-02 12:35:05.867 [main] Easymow$ - Position : (1, 5, South) Instructions : DAADAGA
-[INFO ] 2019-01-02 12:35:05.867 [main] Easymow$ - Position : (1, 4, South) Instructions : DAADAGA
-[INFO ] 2019-01-02 12:35:05.867 [main] Easymow$ - Position : (2, 5, West) Instructions : a
-[INFO ] 2019-01-02 12:35:05.867 [main] Easymow$ - Position : (1, 5, West) Instructions : a
-[RESULT] 2019-01-02 12:35:05.868 [main] Easymow$ - (0, 5, West) => (1, 4, South)
-[RESULT] 2019-01-02 12:35:05.869 [main] Easymow$ - (2, 5, West) => (1, 5, West)
-[WARN ] 2019-01-02 14:22:27.860 [main] Easymow$ - Location (87,2) is out of bound: vehicles ignored
-[WARN ] 2019-01-02 14:22:27.876 [main] Easymow$ - Location (990,9) is out of bound: vehicles ignored
-[WARN ] 2019-01-02 14:22:27.879 [main] Easymow$ - Conflict between two vehicles location at (2,1): vehicles ignored
-[WARN ] 2019-01-02 14:22:27.880 [main] Easymow$ - Conflict between two vehicles location at (3,1): vehicles ignored
-[WARN ] 2019-01-02 14:22:27.880 [main] Easymow$ - Conflict between two vehicles location at (3,1): vehicles ignored
-[WARN ] 2019-01-02 14:22:27.880 [main] Easymow$ - Conflict between two vehicles location at (2,1): vehicles ignored
-[INFO ] 2019-01-02 14:22:27.948 [main] Easymow$ - Position : (0, 5, West) Instructions : DAADAGA
-[INFO ] 2019-01-02 14:22:27.948 [main] Easymow$ - Position : (0, 5, North) Instructions : DAADAGA
-[WARN ] 2019-01-02 14:22:27.949 [main] Easymow$ - Vehicle hit a wall at (0,5): instruction ignored
-[WARN ] 2019-01-02 14:22:27.949 [main] Easymow$ - Vehicle hit a wall at (0,5): instruction ignored
-[INFO ] 2019-01-02 14:22:27.949 [main] Easymow$ - Position : (0, 5, East) Instructions : DAADAGA
-[INFO ] 2019-01-02 14:22:27.949 [main] Easymow$ - Position : (1, 5, East) Instructions : DAADAGA
-[INFO ] 2019-01-02 14:22:27.949 [main] Easymow$ - Position : (1, 5, South) Instructions : DAADAGA
-[INFO ] 2019-01-02 14:22:27.949 [main] Easymow$ - Position : (1, 4, South) Instructions : DAADAGA
-[INFO ] 2019-01-02 14:22:27.949 [main] Easymow$ - Position : (2, 5, West) Instructions : a
-[INFO ] 2019-01-02 14:22:27.949 [main] Easymow$ - Position : (1, 5, West) Instructions : a
-[RESULT] 2019-01-02 14:22:27.951 [main] Easymow$ - (0, 5, West) => (1, 4, South)
-[RESULT] 2019-01-02 14:22:27.951 [main] Easymow$ - (2, 5, West) => (1, 5, West)
-[WARN ] 2019-01-02 14:48:18.139 [main] Easymow$ - Location (87,2) is out of bound: vehicles ignored
-[WARN ] 2019-01-02 14:48:18.175 [main] Easymow$ - Location (990,9) is out of bound: vehicles ignored
-[WARN ] 2019-01-02 14:48:18.181 [main] Easymow$ - Conflict between two vehicles location at (2,1): vehicles ignored
-[WARN ] 2019-01-02 14:48:18.182 [main] Easymow$ - Conflict between two vehicles location at (3,1): vehicles ignored
-[WARN ] 2019-01-02 14:48:18.182 [main] Easymow$ - Conflict between two vehicles location at (3,1): vehicles ignored
-[WARN ] 2019-01-02 14:48:18.182 [main] Easymow$ - Conflict between two vehicles location at (2,1): vehicles ignored
-[INFO ] 2019-01-02 14:48:18.325 [main] Easymow$ - Position : (0, 5, West) Instructions : DAADAGA
-[INFO ] 2019-01-02 14:48:18.325 [main] Easymow$ - Position : (0, 5, North) Instructions : DAADAGA
-[WARN ] 2019-01-02 14:48:18.325 [main] Easymow$ - Vehicle hit a wall at (0,5): instruction ignored
-[WARN ] 2019-01-02 14:48:18.325 [main] Easymow$ - Vehicle hit a wall at (0,5): instruction ignored
-[INFO ] 2019-01-02 14:48:18.325 [main] Easymow$ - Position : (0, 5, East) Instructions : DAADAGA
-[INFO ] 2019-01-02 14:48:18.325 [main] Easymow$ - Position : (1, 5, East) Instructions : DAADAGA
-[INFO ] 2019-01-02 14:48:18.326 [main] Easymow$ - Position : (1, 5, South) Instructions : DAADAGA
-[INFO ] 2019-01-02 14:48:18.326 [main] Easymow$ - Position : (1, 4, South) Instructions : DAADAGA
-[INFO ] 2019-01-02 14:48:18.326 [main] Easymow$ - Position : (2, 5, West) Instructions : a
-[INFO ] 2019-01-02 14:48:18.326 [main] Easymow$ - Position : (1, 5, West) Instructions : a
-[RESULT] 2019-01-02 14:48:18.327 [main] Easymow$ - (0, 5, West) => (1, 4, South)
-[RESULT] 2019-01-02 14:48:18.327 [main] Easymow$ - (2, 5, West) => (1, 5, West)
+[WARN ] 2019-01-02 16:09:59.209 [main] Easymow$ - Location (87,2) is out of bound: vehicles ignored
+[WARN ] 2019-01-02 16:09:59.226 [main] Easymow$ - Location (990,9) is out of bound: vehicles ignored
+[WARN ] 2019-01-02 16:09:59.229 [main] Easymow$ - Conflict between two vehicles location at (2,1): vehicles ignored
+[WARN ] 2019-01-02 16:09:59.229 [main] Easymow$ - Conflict between two vehicles location at (3,1): vehicles ignored
+[WARN ] 2019-01-02 16:09:59.229 [main] Easymow$ - Conflict between two vehicles location at (3,1): vehicles ignored
+[WARN ] 2019-01-02 16:09:59.229 [main] Easymow$ - Conflict between two vehicles location at (2,1): vehicles ignored
+[WARN ] 2019-01-02 16:09:59.229 [main] Easymow$ - Conflict between two vehicles location at (3,1): vehicles ignored
+[INFO ] 2019-01-02 16:09:59.328 [main] Easymow$ - Position : (0, 5, West) Instructions : DAADAGA
+[INFO ] 2019-01-02 16:09:59.329 [main] Easymow$ - Position : (0, 5, North) Instructions : DAADAGA
+[WARN ] 2019-01-02 16:09:59.329 [main] Easymow$ - Vehicle hit a wall at (0,5): instruction ignored
+[WARN ] 2019-01-02 16:09:59.329 [main] Easymow$ - Vehicle hit a wall at (0,5): instruction ignored
+[INFO ] 2019-01-02 16:09:59.329 [main] Easymow$ - Position : (0, 5, East) Instructions : DAADAGA
+[INFO ] 2019-01-02 16:09:59.329 [main] Easymow$ - Position : (1, 5, East) Instructions : DAADAGA
+[INFO ] 2019-01-02 16:09:59.329 [main] Easymow$ - Position : (1, 5, South) Instructions : DAADAGA
+[INFO ] 2019-01-02 16:09:59.329 [main] Easymow$ - Position : (1, 4, South) Instructions : DAADAGA
+[INFO ] 2019-01-02 16:09:59.330 [main] Easymow$ - Position : (2, 4, West) Instructions : a
+[WARN ] 2019-01-02 16:09:59.330 [main] Easymow$ - Vehicle hit another vehicle at (1,4): instruction ignored
+[RESULT] 2019-01-02 16:09:59.331 [main] Easymow$ - (0, 5, West) => (1, 4, South)
+[RESULT] 2019-01-02 16:09:59.331 [main] Easymow$ - (2, 4, West) => (2, 4, West)
+[WARN ] 2019-01-02 16:11:10.454 [main] Easymow$ - Location (87,2) is out of bound: vehicles ignored
+[WARN ] 2019-01-02 16:11:10.486 [main] Easymow$ - Location (990,9) is out of bound: vehicles ignored
+[WARN ] 2019-01-02 16:11:10.488 [main] Easymow$ - Conflict between two vehicles location at (2,1): vehicles ignored
+[WARN ] 2019-01-02 16:11:10.489 [main] Easymow$ - Conflict between two vehicles location at (3,1): vehicles ignored
+[WARN ] 2019-01-02 16:11:10.489 [main] Easymow$ - Conflict between two vehicles location at (3,1): vehicles ignored
+[WARN ] 2019-01-02 16:11:10.489 [main] Easymow$ - Conflict between two vehicles location at (2,1): vehicles ignored
+[INFO ] 2019-01-02 16:11:10.588 [main] Easymow$ - Position : (0, 5, West) Instructions : DAADAGA
+[INFO ] 2019-01-02 16:11:10.588 [main] Easymow$ - Position : (0, 5, North) Instructions : DAADAGA
+[WARN ] 2019-01-02 16:11:10.588 [main] Easymow$ - Vehicle hit a wall at (0,5): instruction ignored
+[WARN ] 2019-01-02 16:11:10.588 [main] Easymow$ - Vehicle hit a wall at (0,5): instruction ignored
+[INFO ] 2019-01-02 16:11:10.588 [main] Easymow$ - Position : (0, 5, East) Instructions : DAADAGA
+[INFO ] 2019-01-02 16:11:10.589 [main] Easymow$ - Position : (1, 5, East) Instructions : DAADAGA
+[INFO ] 2019-01-02 16:11:10.589 [main] Easymow$ - Position : (1, 5, South) Instructions : DAADAGA
+[INFO ] 2019-01-02 16:11:10.589 [main] Easymow$ - Position : (1, 4, South) Instructions : DAADAGA
+[INFO ] 2019-01-02 16:11:10.589 [main] Easymow$ - Position : (2, 4, West) Instructions : a
+[WARN ] 2019-01-02 16:11:10.589 [main] Easymow$ - Vehicle hit another vehicle at (1,4): instruction ignored
+[INFO ] 2019-01-02 16:11:10.589 [main] Easymow$ - Position : (4, 1, East) Instructions : a
+[INFO ] 2019-01-02 16:11:10.589 [main] Easymow$ - Position : (5, 1, East) Instructions : a
+[RESULT] 2019-01-02 16:11:10.590 [main] Easymow$ - (0, 5, West) => (1, 4, South)
+[RESULT] 2019-01-02 16:11:10.591 [main] Easymow$ - (2, 4, West) => (2, 4, West)
+[RESULT] 2019-01-02 16:11:10.591 [main] Easymow$ - (4, 1, East) => (5, 1, East)
