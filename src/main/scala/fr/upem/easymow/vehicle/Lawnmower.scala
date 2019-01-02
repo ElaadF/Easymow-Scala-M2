@@ -3,7 +3,7 @@ package fr.upem.easymow.vehicle
 import fr.upem.easymow.error._
 import fr.upem.easymow.playground._
 import fr.upem.easymow.playground.Field
-import fr.upem.easymow.movement.RotationLawnmower._
+import fr.upem.easymow.movement.Rotation._
 
 /**
   *  @constructor Create a new `Lawnmower` by specifying a
