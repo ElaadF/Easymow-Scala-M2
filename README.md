@@ -2,9 +2,9 @@
 
 
 # Easymow-Scala-M2
+[Sujet Easymow](https://github.com/upem-scala-2018/course3-typeclasses/blob/master/projet-easymow.pdf)   
 Elaad FURREEDAN   
 Master 2 - Logiciel   
-Lien vers la documentation du projet :   
 [Documentation](https://elaadf.github.io/Easymow-Scala-M2)
 
 ## Utilisation
@@ -89,7 +89,7 @@ Lorsqu'une tondeuse essaye d'avancer dans la direction d'une autre tondeuse
 ```
 [WARN ] 2019-01-02 21:29:31.839 [main] Easymow$ - Vehicle hit another vehicle at (1,5): instruction ignored
 ```
-### ERROR
+### ERROR :
 Les erreurs qui empêchent le bon fonctionnement du programme, et donc qui ne peut pas continuer de fonctionner    
 Exemples:    
 
@@ -103,6 +103,3 @@ Lorsque l'ouverture du fichier n'a pas fonctionné
 ```
 >**Note:** Les ERROR sont afichées sur ```stderr``` sur la console et aussi enregistré dans le fichier de log
 
-
-
-[Sujet Easymow](https://github.com/upem-scala-2018/course3-typeclasses/blob/master/projet-easymow.pdf)
