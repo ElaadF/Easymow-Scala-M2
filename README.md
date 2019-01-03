@@ -40,6 +40,12 @@ $ sbt run
 2. Chaque tondeuses est positionnée au début si elles respectent les règles précédentes 
 3. Si une tondeuse rencontre un obstacle (mur ou tondeuse) elle ignorera alors l'action et passera à la suivante
 
+Syntaxe :   
+   + Terrain : ```[\t ]*(\d+)[\t ]+(\d+)[\t ]*
+   + Tondeuse : ```^[\t ]*(\d+)[\t ]+(\d+)[\t ]+([newsNEWS]{1})[\t ]*$```
+   + Instructions : ```[agdAGD]+```
+
+
 ## Logs
 Le programme utilise l'API [log4j](https://logging.apache.org/log4j/2.x/index.html) afin de gérer le système de logger
 A chaque execution du programme, un fichier de log retrace alors en détail chaque execution avec les étapes   
