@@ -22,7 +22,7 @@ clean coverage test coverageReport
 ```
 Une fois le programme lancé, il vous demandera de sélectionner un fichier, un fichier d'exemple est founit et se situe dans
 ```src/main/resources/input```
-Le programme vous afichera la nouvelles positions de chaques tondeuses **valides**
+Le programme vous afichera la nouvelle position de chaque tondeuse **valides**
 
 Exemple :   
 ```
