@@ -22,7 +22,7 @@ clean coverage test coverageReport
 ```
 Une fois le programme lancé, il vous demandera de sélectionner un fichier, un fichier d'exemple est founit et se situe dans
 ```src/main/resources/input```
-Le programme vous afichera la nouvelle position de chaque tondeuse **valides**
+Le programme vous afichera la nouvelle position de chaque tondeuse **valide**
 
 Exemple :   
 ```
@@ -34,10 +34,10 @@ $ sbt run
 ```
 
 ## Choix du projet
-1. Dans le programme une tondeuse sont considérées valides lorsque : 
+1. Dans le programme une tondeuse est considérée valide lorsque : 
    * est bien à l'intérieur du terrain
-   * si il ne possède pas la même position avec une autre tondeuse
-2. Chaque tondeuses est positionnée au début si elles respectent les règles précédentes 
+   * si elle ne possède pas la même position avec une autre tondeuse
+2. Chaque tondeuse est positionnée au début si elles respectent les règles précédentes 
 3. Si une tondeuse rencontre un obstacle (mur ou tondeuse) elle ignorera alors l'action et passera à la suivante
 
 Syntaxe :   
