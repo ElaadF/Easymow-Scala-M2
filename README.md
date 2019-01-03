@@ -41,7 +41,7 @@ $ sbt run
 3. Si une tondeuse rencontre un obstacle (mur ou tondeuse) elle ignorera alors l'action et passera à la suivante
 
 Syntaxe :   
-   + Terrain : ```[\t ]*(\d+)[\t ]+(\d+)[\t ]*
+   + Terrain : ```[\t ]*(\d+)[\t ]+(\d+)[\t ]*```
    + Tondeuse : ```^[\t ]*(\d+)[\t ]+(\d+)[\t ]+([newsNEWS]{1})[\t ]*$```
    + Instructions : ```[agdAGD]+```
 
