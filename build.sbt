@@ -14,3 +14,4 @@ libraryDependencies += "org.apache.logging.log4j" %% "log4j-api-scala" % "11.0"
 libraryDependencies += "org.typelevel" %% "cats-core" % "1.5.0"
 libraryDependencies += "org.scalacheck" %% "scalacheck" % "1.14.0" % "test"
 libraryDependencies += "org.scalatest" % "scalatest_2.12" % "3.0.5" % "test"
+libraryDependencies += "org.mockito" % "mockito-core" % "2.23.4" % Test

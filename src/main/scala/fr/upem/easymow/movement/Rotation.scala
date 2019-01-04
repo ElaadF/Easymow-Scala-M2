@@ -19,7 +19,7 @@ object Rotation {
   def leftRotation[A: Rotation](a: A): A = Rotation[A].leftRotation(a)
   def rightRotation[A: Rotation](a: A): A = Rotation[A].rightRotation(a)
 
-  implicit class RotateVehicle[A: Rotation](a: A) {
+  implicit class Rotate[A: Rotation](a: A) {
     def leftRotation: A = Rotation[A].leftRotation(a)
     def rightRotation: A = Rotation[A].rightRotation(a)
   }

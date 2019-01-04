@@ -15,7 +15,7 @@ case object AddOutOfBound extends ErrorMsg[(Int, Int)] {
 
 /** The specified file doesn't exists or a problem occurred when the program try to open it  */
 case object ReadFileFailed extends ErrorMsg[String] {
-  def errorMessage(path: String): String = s"Read $path have failed"
+  def errorMessage(err: String): String = s"Read file have failed: $err"
 }
 
 /** A file may always have odd number of line : min -> field's size, lawnmower's position and  lawnmower's instruction */
