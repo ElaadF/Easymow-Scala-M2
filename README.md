@@ -5,7 +5,7 @@
 [Sujet Easymow](https://github.com/upem-scala-2018/course3-typeclasses/blob/master/projet-easymow.pdf)   
 Elaad FURREEDAN   
 Master 2 - Logiciel   
-[Documentation](https://elaadf.github.io/Easymow-Scala-M2)
+[Documentation du Projet](https://elaadf.github.io/Easymow-Scala-M2)
 
 ## Utilisation
 lancer le programme :   
