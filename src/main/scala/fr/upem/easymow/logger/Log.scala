@@ -35,37 +35,37 @@ object Log extends Logging {
 
   def apply[A](implicit e: Log[A]): Log[A] = e
 
-  /** Log ERROR level in logs/record.log and stderr
-    *
-    *  @param a the implicit element to log
-    */
+
   def loggingError[A: Log](a: A): Unit = Log[A].loggingError(a)
-
-  /** Log WARN level in logs/record.log
-    *
-    *  @param a the implicit element to log
-    */
   def loggingWarn[A: Log](a: A): Unit = Log[A].loggingWarn(a)
-
-  /** Log INFO level in logs/record.log
-    *
-    *  @param a the implicit element to log
-    */
   def loggingInfo[A: Log](a: A): Unit = Log[A].loggingInfo(a)
-
-  /** Log RESULT custom level in logs/record.log and stdout
-    *
-    *  @param a the implicit element to log
-    */
   def loggingResult[A: Log](a: A): Unit = Log[A].loggingResult(a)
 
   implicit class LoggingMessages[A: Log](a: A) {
 
+    /** Log ERROR level in logs/record.log and stderr
+      *
+      *  @param a the implicit element to log
+      */
     def loggingError(): Unit = Log[A].loggingError(a)
-    def loggingWarn(): Unit = Log[A].loggingWarn(a)
-    def loggingInfo(): Unit = Log[A].loggingInfo(a)
-    def loggingResult(): Unit = Log[A].loggingResult(a)
 
+    /** Log WARN level in logs/record.log
+      *
+      *  @param a the implicit element to log
+      */
+    def loggingWarn(): Unit = Log[A].loggingWarn(a)
+
+    /** Log INFO level in logs/record.log
+      *
+      *  @param a the implicit element to log
+      */
+    def loggingInfo(): Unit = Log[A].loggingInfo(a)
+
+    /** Log RESULT custom level in logs/record.log and stdout
+      *
+      *  @param a the implicit element to log
+      */
+    def loggingResult(): Unit = Log[A].loggingResult(a)
   }
 
   /** Logging on List[String]*/
