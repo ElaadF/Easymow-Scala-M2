@@ -109,3 +109,10 @@ Lorsque l'ouverture du fichier n'a pas fonctionné
 ```
 >**Note:** Les ERROR sont afichées sur ```stderr``` sur la console et aussi enregistré dans le fichier de log
 
+## Problèmes rencontrés
+### Tester les logs
+Afin d'afiner mes tests j'ai essayé d'utiliser l'api **Mockito** afin de tester que mes logger fonctionnaient bien.
+Malheureusement je ne suis pas arrivé à mes fins, en effet ma démarche était de surcharger la variable **logger** afin d'y placer un **mock**, mais comme mon objet Log contient des surcharge et des typeclass je ne n'ai pas réussi à instancier un objet Log afin de surcharger logger et ansi pouver tester le fonctionnement de mes logs.
+
+### Caractère immuable du langage
+Dû au charactère immuable du langage, il n'est pas naturel d'ajouter des element dans une liste puis de la renvoyer. Pour cela il est necessaire d'utiliser des méthodes récursives afin de modifier ma liste et ansi la garder à jour au sein d'une méthode.
