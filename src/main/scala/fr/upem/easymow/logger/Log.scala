@@ -7,6 +7,8 @@ import fr.upem.easymow.vehicle._
 import org.apache.logging.log4j.Level
 import org.apache.logging.log4j.scala.Logging
 
+/** Log on String, List[String] and Lawnmower
+  * */
 @scala.annotation.implicitNotFound("No way to log ${A}." +
   "An implicit Log[${A}] must be in scope")
 trait Log[A] {
@@ -28,13 +30,33 @@ object Log extends Logging {
   implicit val fieldShow: Show[Field] =
     Show.show(f => s"Field : length : ${f.length + 1}, width : ${f.width + 1}")
 
+  /** Custom level log in console in stdout */
   val RESULT: Level = Level.forName("RESULT", 450)
 
   def apply[A](implicit e: Log[A]): Log[A] = e
 
+  /** Log ERROR level in logs/record.log and stderr
+    *
+    *  @param a the implicit element to log
+    */
   def loggingError[A: Log](a: A): Unit = Log[A].loggingError(a)
+
+  /** Log WARN level in logs/record.log
+    *
+    *  @param a the implicit element to log
+    */
   def loggingWarn[A: Log](a: A): Unit = Log[A].loggingWarn(a)
+
+  /** Log INFO level in logs/record.log
+    *
+    *  @param a the implicit element to log
+    */
   def loggingInfo[A: Log](a: A): Unit = Log[A].loggingInfo(a)
+
+  /** Log RESULT custom level in logs/record.log and stdout
+    *
+    *  @param a the implicit element to log
+    */
   def loggingResult[A: Log](a: A): Unit = Log[A].loggingResult(a)
 
   implicit class LoggingMessages[A: Log](a: A) {
