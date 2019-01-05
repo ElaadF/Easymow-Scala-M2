@@ -4,21 +4,4 @@
 *
 */
 
-[INFO ] 2019-01-05 19:44:12.987 [main] Log$ - Field : length : 6, width : 6
-[WARN ] 2019-01-05 19:44:13.283 [main] Log$ - Location (87,2) is out of bound: vehicles ignored
-[WARN ] 2019-01-05 19:44:13.283 [main] Log$ - Location (990,9) is out of bound: vehicles ignored
-[INFO ] 2019-01-05 19:44:13.347 [main] Log$ - Position : (0, 5, West) Instructions : DAADAGA
-[INFO ] 2019-01-05 19:44:13.347 [main] Log$ - Position : (0, 5, North) Instructions : DAADAGA
-[WARN ] 2019-01-05 19:44:13.347 [main] Log$ - Vehicle hit a wall at (0,5): instruction ignored
-[WARN ] 2019-01-05 19:44:13.347 [main] Log$ - Vehicle hit a wall at (0,5): instruction ignored
-[INFO ] 2019-01-05 19:44:13.347 [main] Log$ - Position : (0, 5, East) Instructions : DAADAGA
-[INFO ] 2019-01-05 19:44:13.348 [main] Log$ - Position : (1, 5, East) Instructions : DAADAGA
-[INFO ] 2019-01-05 19:44:13.348 [main] Log$ - Position : (1, 5, North) Instructions : DAADAGA
-[WARN ] 2019-01-05 19:44:13.348 [main] Log$ - Vehicle hit a wall at (1,5): instruction ignored
-[INFO ] 2019-01-05 19:44:13.348 [main] Log$ - Position : (2, 5, West) Instructions : a
-[WARN ] 2019-01-05 19:44:13.348 [main] Log$ - Vehicle hit another vehicle at (1,5): instruction ignored
-[INFO ] 2019-01-05 19:44:13.348 [main] Log$ - Position : (4, 1, East) Instructions : a
-[INFO ] 2019-01-05 19:44:13.348 [main] Log$ - Position : (5, 1, East) Instructions : a
-[RESULT] 2019-01-05 19:44:13.350 [main] Log$ - (0, 5, West) => (1, 5, North)
-[RESULT] 2019-01-05 19:44:13.350 [main] Log$ - (2, 5, West) => (2, 5, West)
-[RESULT] 2019-01-05 19:44:13.350 [main] Log$ - (4, 1, East) => (5, 1, East)
+
