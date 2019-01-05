@@ -52,8 +52,6 @@ object Easymow extends App {
       }
     case Failure(ex) => ReadFileFailed.errorMessage(ex.getMessage).loggingError()
   }
-
-
 }
 
 

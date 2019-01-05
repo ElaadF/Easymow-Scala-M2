@@ -35,9 +35,6 @@ object IO {
       case Some(_) => None
     }
 
-    //val RegexAnalysis.Try(patternFieldSize(length, width) = content.head)
-
-
     val vehicles = content.drop(1)
     val positions: List[String] = getEvenIndexElement(vehicles)
     val instructions: List[String] = getOddIndexElement(vehicles)
@@ -76,7 +73,7 @@ object IO {
   }
 
   /** See if a word match the field's size initialisation according to
-    * [[fr.upem.easymow.file.RegexAnalysis.patternFieldSize patternFieldSize]]
+    * [[fr.upem.easymow.file patternFieldSize]]
     *
     *  @param s the word
     *  @return true if the word match the regex
@@ -84,7 +81,7 @@ object IO {
   def isFieldValidFormat(s: String): Boolean = RegexAnalysis.patternFieldSize matches s
 
   /** See if a word match the lawnmower's position initialisation according to
-    * [[fr.upem.easymow.file.RegexAnalysis.patternInstructions patternInstructions]]
+    * [[fr.upem.easymow.file patternInstructions]]
     *
     *  @param s the word
     *  @return true if the word match the regex
@@ -92,7 +89,7 @@ object IO {
   def isVehiclePosValidFormat(s: String): Boolean = RegexAnalysis.patternVehiclePos matches s
 
   /** See if a word match the lawnmower's instruction initialisation according to
-    * [[fr.upem.easymow.file.RegexAnalysis.patternInstructions patternInstructions]]
+    * [[fr.upem.easymow.file patternInstructions]]
     *
     *  @param s the word
     *  @return true if the word match the regex
@@ -116,7 +113,7 @@ object IO {
   /** Test if a number of line is valid according to the file's format
     *
     *  @param contentSize number of line of the file
-    *  @return an [[fr.upem.easymow.error.FileNumberLineWrong error message]] if contentSize is even or < 3
+    *  @return an [[fr.upem.easymow.error error message]] if contentSize is even or < 3
     */
   def isValidNumberOfLine(contentSize: Int): Option[String] = contentSize match {
     case c if c < 3 || c%2 == 0 => Some(FileNumberLineWrong.errorMessage(c.toString))
@@ -124,7 +121,7 @@ object IO {
   }
 
   /** Test if a field's size initialisation is valid according to
-    * [[fr.upem.easymow.file.IO.isFieldValidFormat ]]
+    * [[fr.upem.easymow.file.IO]]
     *
     *  @param content the word to analyze
     *  @return an [[fr.upem.easymow.error.FieldSizeFormatIncorrect error message]] if the format is not valid
@@ -138,7 +135,7 @@ object IO {
     * [[fr.upem.easymow.file.IO.isVehiclePosValidFormat ]]
     *
     *  @param content nthe word to analyze
-    *  @return an [[fr.upem.easymow.error.VehiclePositionFormatIncorrect error message]] if the format is not valid
+    *  @return an [[fr.upem.easymow.error error message]] if the format is not valid
     */
   def errorPosFormat(content: String): Option[String] = content match {
     case c if !isVehiclePosValidFormat(c) => Some(VehiclePositionFormatIncorrect.errorMessage(c))

@@ -6,7 +6,6 @@ import fr.upem.easymow.playground.{Field, Position}
 import fr.upem.easymow.vehicle._
 import org.apache.logging.log4j.Level
 import org.apache.logging.log4j.scala.Logging
-
 /** Log on String, List[String] and Lawnmower
   * */
 @scala.annotation.implicitNotFound("No way to log ${A}." +
@@ -18,7 +17,7 @@ trait Log[A] {
   def loggingResult(a: A): Unit
 }
 
-/** Allow to logs on the console and in logs/record.log*/
+/** Allow to logs on the console and in logs/record.log */
 object Log extends Logging {
 
   implicit val positionShow: Show[Position] =
@@ -43,28 +42,16 @@ object Log extends Logging {
 
   implicit class LoggingMessages[A: Log](a: A) {
 
-    /** Log ERROR level in logs/record.log and stderr
-      *
-      *  @param a the implicit element to log
-      */
+    /** Log ERROR level in logs/record.log and stderr */
     def loggingError(): Unit = Log[A].loggingError(a)
 
-    /** Log WARN level in logs/record.log
-      *
-      *  @param a the implicit element to log
-      */
+    /** Log WARN level in logs/record.log */
     def loggingWarn(): Unit = Log[A].loggingWarn(a)
 
-    /** Log INFO level in logs/record.log
-      *
-      *  @param a the implicit element to log
-      */
+    /** Log INFO level in logs/record.log */
     def loggingInfo(): Unit = Log[A].loggingInfo(a)
 
-    /** Log RESULT custom level in logs/record.log and stdout
-      *
-      *  @param a the implicit element to log
-      */
+    /** Log RESULT custom level in logs/record.log and stdout */
     def loggingResult(): Unit = Log[A].loggingResult(a)
   }
 
