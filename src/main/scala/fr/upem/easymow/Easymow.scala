@@ -1,3 +1,5 @@
+// $COVERAGE-OFF$
+
 package fr.upem.easymow
 
 import fr.upem.easymow.error.{AddOutOfBound, ReadFileFailed, VehiclesSameLocation}
@@ -54,4 +56,4 @@ object Easymow extends App {
   }
 }
 
-
+// $COVERAGE-ON$

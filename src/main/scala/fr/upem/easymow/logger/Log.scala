@@ -1,3 +1,5 @@
+// $COVERAGE-OFF$
+
 package fr.upem.easymow.logger
 
 import cats.Show
@@ -99,3 +101,4 @@ object Log extends Logging {
 
       }
 }
+// $COVERAGE-ON$
