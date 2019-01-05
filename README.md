@@ -72,6 +72,10 @@ redirigé vers le fichier ```logs/record.log``` ansi que le format des logs.
 
 ### INFO :
 
+Création du terrain avec ses dimensions
+```
+[INFO ] 2019-01-05 19:44:12.987 [main] Log$ - Field : length : 6, width : 6
+```
 Etat d'avancement de la tondeuse, coordonnées, direction et instructions
 ```
 [INFO ] 2019-01-02 21:29:31.838 [main] Easymow$ - Position : (0, 5, West) Instructions : DAADAGA
