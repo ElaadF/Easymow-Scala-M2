@@ -37,8 +37,9 @@ $ sbt run
 1. Dans le programme une tondeuse est considérée valide lorsque : 
    * est bien à l'intérieur du terrain
    * si elle ne possède pas la même position avec une autre tondeuse
-2. Chaque tondeuse est positionnée au début si elles respectent les règles précédentes 
+2. Chaque tondeuse est positionnée dès le début si elles respectent les règles précédentes 
 3. Si une tondeuse rencontre un obstacle (mur ou tondeuse) elle ignorera alors l'action et passera à la suivante
+4. Les cases du terrain sont numérotées à partir de 0, donc "5 5" permet de créer un terrain de taille 6 par 6  (36 cases)
 
 Syntaxe :   
    + Terrain : ```[\t ]*(\d+)[\t ]+(\d+)[\t ]*```
