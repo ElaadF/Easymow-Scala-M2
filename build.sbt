@@ -17,4 +17,4 @@ libraryDependencies += "org.scalatest" % "scalatest_2.12" % "3.0.5" % "test"
 libraryDependencies += "org.mockito" % "mockito-core" % "2.23.4" % Test
 
 coverageExcludedPackages := "fr\\.upem\\.easymow\\.logger\\.*"
-coverageExcludedPackages := "fr\\.upem\\.easymow\\.Easymow.scala"
+coverageExcludedPackages := "fr\\.upem\\.easymow\\.Easymow"
