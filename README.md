@@ -3,9 +3,10 @@
 
 # Easymow
 [Sujet Easymow](https://github.com/upem-scala-2018/course3-typeclasses/blob/master/projet-easymow.pdf)   
+[Documentation du Projet](https://elaadf.github.io/Easymow-Scala-M2)   
 Elaad FURREEDAN   
-Master 2 - Logiciel - UPEM - 2018/2019   
-[Documentation du Projet](https://elaadf.github.io/Easymow-Scala-M2)
+*Master 2 - Logiciel   
+UPEM - 2018/2019*   
 
 ## Principe
 Gérer le déplacement de tondeuse à gazon sur un terrain cadrillé via une liste de commande prédéfinie dans un ficher qui décrit les positions initiales, les déplacements et les directions. Le projet indique la position finale et initiale de chaque tondeuse et log les évenements comme par exemple la collision avec une autre tondeuse à gazon ou un mur.   
