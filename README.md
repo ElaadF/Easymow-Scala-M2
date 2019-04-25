@@ -1,11 +1,15 @@
 [![Build Status](https://travis-ci.com/ElaadF/Easymow-Scala-M2.svg?token=1HfxJpzgfSyTHsDYM9Kj&branch=master)](https://travis-ci.com/ElaadF/Easymow-Scala-M2)   [![codecov](https://codecov.io/gh/ElaadF/Easymow-Scala-M2/branch/master/graph/badge.svg?token=iYwACpuzjD)](https://codecov.io/gh/ElaadF/Easymow-Scala-M2)
 
 
-# Easymow-Scala-M2
+# Easymow
 [Sujet Easymow](https://github.com/upem-scala-2018/course3-typeclasses/blob/master/projet-easymow.pdf)   
 Elaad FURREEDAN   
 Master 2 - Logiciel   
 [Documentation du Projet](https://elaadf.github.io/Easymow-Scala-M2)
+
+## Principe
+Gérer le déplacement de tondeuse à gazon sur un terrain cadrillé via une liste de commande prédéfinie dans un ficher qui décrit les positions initiales, les déplacements et les directions. Le projet indique la position finale et initiale de chaque tondeuse et log les évenements comme par exemple la collision avec une autre tondeuse à gazon ou un mur.   
+Les erreurs de syntaxes du fichier de description des commandes seront détectées et loggées.
 
 ## Utilisation
 lancer le programme :   
